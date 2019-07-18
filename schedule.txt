@@ -1,0 +1,64 @@
+Prototype 1:
+Final build on Sunday afternoon. 
+Submitt Monday morning. 
+
+Tori = designer
+Alexi = programmer
+Talitha = art
+Lucky = sound 
+Wednesday = project man
+
+Thursday:
+
+Tori: Finish different shooting design and enemy effects design (so the player shooting either rock, paper or 
+scissors and what happens to the enemies if each one hits them. finish the design of that today). Also 
+indicate to Alexi how you want the player to see the next bullet (r,p,s) that they are going to have.  
+
+Alexi: Finish enemies spawning from different locations and attacking (coming towards player), three 
+different types of enemies should spawn.
+
+Talitha: Finish all player art and bullets (rock, paper, scissors the player shoots)
+
+Lucky: Get sound for player getting hurt, player shooting. since the player is going to shoot either rock,
+paper or scissors maybe get different sounds for when each is shot. 
+
+Friday:
+
+Tori: How game play goes (beats). pacing ect. Look at spawning and attacking Alexi implemented the day before.
+
+Alexi: Finish the different bullets a player can shoot (rock,paper,scissors) and how the next bullet is 
+        indicated to the player. Apply the specific effects to the enemies that Tori designed the day before.
+       Player shoots different bullets that generate randomly and the next bullet to load is shown. 
+
+Talitha: enemies and different effects and explosion art for the enemies.  finish the 
+         animation drawings for these.
+
+Lucky:  sound of the game. (look at the art of the game and make music fit that)
+
+Saturday: (Tori, Lucky and Alexi meeting up)
+
+Tori:  user control design. Test game feel, pacing and design. 
+
+
+Alexi: applying beats of game/pacing to enemies ect. 
+
+Talitha: Applying all animations into the game. 
+
+Lucky: Implementing all sound into the game
+
+Sunday: (Tori, Lucky, Talitha and Alexi meeting up)
+*menu + instructions : tori
+
+Tori: animation and sound design check.
+
+Alexi: changing user control design if necessary. Life bar. 
+
+Talitha:  applying final animations(particle effects).
+
+Lucky: applying final sound
+
+Sunday afternoon = final build. 
+
+
+
+
