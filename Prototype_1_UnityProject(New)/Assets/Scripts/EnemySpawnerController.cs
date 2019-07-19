@@ -13,13 +13,13 @@ public class EnemySpawnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("SpawnTimer"); //Your main boi. It's the lamb sauce.
+        StartCoroutine("SpawnTimer"); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //spawnRate -= 0.3f * Time.deltaTime;
     }
 
     IEnumerator SpawnTimer() //coroutine to continually spawn enemies.

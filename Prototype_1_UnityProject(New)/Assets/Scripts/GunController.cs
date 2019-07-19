@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public GameObject bulletObj;
+    public GameObject [] bulletObjArr; //0 for rock, 1 for papper, 2 for scissors
     public GameObject playerObj;
+
     float distanceFromPlayer; //How far the gun should be from the centre object
+
+    int [] bulletQueueArr = new int [2];
 
     // Start is called before the first frame update
     void Start()
     {
-        distanceFromPlayer = 0.6f; //helps with positioning. Puts the gun a bit off centre of player
+        distanceFromPlayer = 0.6f; //helps with positioning. Puts the gun a bit off-centre of player
+
+        for (int i = 0; i < bulletQueueArr.Length; i++) { //Fill the bullet queue
+            bulletQueueArr[i] = Random.Range(0, bulletObjArr.Length);
+        }
+        UpdateVisualQueue();
     }
 
     // Update is called once per frame
@@ -34,7 +42,7 @@ public class GunController : MonoBehaviour
     {
         Vector3 mousePoint = GetMousePoint();
         Vector3 localPoint = mousePoint - playerObj.transform.position; //The mouse point relative to the player. Is useful.
-        print(localPoint);
+        //print(localPoint);
 
         if (localPoint.magnitude > 0.1f)//stops annoying case when mouse is directly over player
         {
@@ -57,8 +65,24 @@ public class GunController : MonoBehaviour
 
     void ShootProjectile(Vector3 shootPoint) //Spawns the bullet, and sets its travel direction
     {
-        GameObject shotBullet = Instantiate(bulletObj, this.transform.position, Quaternion.identity);
+        GameObject shotBullet = Instantiate(bulletObjArr[bulletQueueArr[0]], this.transform.position, Quaternion.identity);
+        LoadBulletToQueue(); 
         shotBullet.GetComponent<PlayerBulletController>().SetTravelDirection(shootPoint);
+    }
+
+    void LoadBulletToQueue() //removes the shot bullet and adds a new one to the back of the queue
+    {
+        for (int i = 0; i < bulletQueueArr.Length -1; i++)
+        {
+            bulletQueueArr[i] = bulletQueueArr[i + 1];
+        }
+        bulletQueueArr[bulletQueueArr.Length-1] = Random.Range(0, bulletObjArr.Length);
+        UpdateVisualQueue();
+    }
+
+    void UpdateVisualQueue()
+    {
+
     }
 
 }

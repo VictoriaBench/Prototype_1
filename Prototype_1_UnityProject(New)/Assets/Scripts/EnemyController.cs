@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public int enemyID; //0 for rock, 1 for paper, 2 for scissors.
+
     Vector3 spawnPoint; //The point where this enemy spawns.
     Vector3 playerPos; //The point where the player is.
 
