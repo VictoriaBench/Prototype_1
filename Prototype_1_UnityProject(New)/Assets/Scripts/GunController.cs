@@ -52,7 +52,7 @@ public class GunController : MonoBehaviour
             newAngle = Vector3.SignedAngle(Vector3.up, localPoint, Vector3.forward); //OMG THEY ADDED THIS METHOD IT IS AMAZING
 
             this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, newAngle); //sets gun angle
-           //this.transform.position = playerObj.transform.position + localPoint.normalized * distanceFromPlayer; //sets gun position
+            this.transform.position = playerObj.transform.position + localPoint.normalized * distanceFromPlayer; //sets gun position
         }
     }
 
