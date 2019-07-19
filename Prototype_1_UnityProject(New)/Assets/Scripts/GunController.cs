@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public GameObject [] bulletObjArr; //0 for rock, 1 for papper, 2 for scissors
+    public GameObject [] bulletObjArr; //0 for rock, 1 for papper, 2 for scissors. The actual bullets being shot
     public GameObject playerObj;
 
     float distanceFromPlayer; //How far the gun should be from the centre object
 
     int [] bulletQueueArr = new int [2];
+    public Sprite[] bulletQueueSpritesArr; //0 for rock, 1 for papper, 2 for scissors. Holds the Visual Sprites for next shot
+    public GameObject nextShotObj;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class GunController : MonoBehaviour
             newAngle = Vector3.SignedAngle(Vector3.up, localPoint, Vector3.forward); //OMG THEY ADDED THIS METHOD IT IS AMAZING
 
             this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, newAngle); //sets gun angle
-            this.transform.position = playerObj.transform.position + localPoint.normalized * distanceFromPlayer; //sets gun position
+           //this.transform.position = playerObj.transform.position + localPoint.normalized * distanceFromPlayer; //sets gun position
         }
     }
 
@@ -82,7 +84,8 @@ public class GunController : MonoBehaviour
 
     void UpdateVisualQueue()
     {
-
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = bulletQueueSpritesArr[bulletQueueArr[0]]; //Player hand update
+        nextShotObj.GetComponent<SpriteRenderer>().sprite = bulletQueueSpritesArr[bulletQueueArr[1]];   //Next shot object update
     }
 
 }
