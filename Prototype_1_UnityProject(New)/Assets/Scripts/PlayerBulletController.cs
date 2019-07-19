@@ -8,7 +8,7 @@ public class PlayerBulletController : MonoBehaviour
 
     float travelSpeed = 5;  //The speed of the player bullet
     Vector3 travelDirection = Vector3.right;    //The direction of the player bullet (updated by the gun script)
-    float timeUntilDestroy = 10;    
+    float timeUntilDestroy = 10;  
 
     void Start()
     {
