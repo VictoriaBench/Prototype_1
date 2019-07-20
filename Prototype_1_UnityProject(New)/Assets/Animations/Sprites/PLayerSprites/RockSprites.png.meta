@@ -99,9 +99,9 @@ TextureImporter:
         x: 156
         y: 31
         width: 172
-        height: 191
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,12 +117,12 @@ TextureImporter:
       name: RockSprites_1
       rect:
         serializedVersion: 2
-        x: 423
+        x: 426
         y: 28
         width: 165
-        height: 194
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,9 +141,9 @@ TextureImporter:
         x: 674
         y: 31
         width: 153
-        height: 191
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

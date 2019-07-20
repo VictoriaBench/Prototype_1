@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public GameObject [] bulletObjArr; //0 for rock, 1 for papper, 2 for scissors. The actual bullets being shot
+    public GameObject[] bulletObjArr; //0 for rock, 1 for papper, 2 for scissors. The actual bullets being shot
     public GameObject playerObj;
+    public GameObject playerGun;
+    public RuntimeAnimatorController[] animators;
 
     float distanceFromPlayer; //How far the gun should be from the centre object
 
     int [] bulletQueueArr = new int [2];
-    public Sprite[] bulletQueueSpritesArr; //0 for rock, 1 for papper, 2 for scissors. Holds the Visual Sprites for next shot
+    public GameObject[] bulletQueueSpritesArr; //0 for rock, 1 for papper, 2 for scissors. Holds the Visual Sprites for next shot
     public GameObject nextShotObj;
 
     // Start is called before the first frame update
     void Start()
     {
-        distanceFromPlayer = 1.9f; //helps with positioning. Puts the gun a bit off-centre of player
+        distanceFromPlayer = 2f; //helps with positioning. Puts the gun a bit off-centre of player
 
         for (int i = 0; i < bulletQueueArr.Length; i++) { //Fill the bullet queue
             bulletQueueArr[i] = Random.Range(0, bulletObjArr.Length);
@@ -84,8 +86,10 @@ public class GunController : MonoBehaviour
 
     void UpdateVisualQueue()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = bulletQueueSpritesArr[bulletQueueArr[0]]; //Player hand update
-        nextShotObj.GetComponent<SpriteRenderer>().sprite = bulletQueueSpritesArr[bulletQueueArr[1]];   //Next shot object update
+        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = null;
+        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = animators[bulletQueueArr[0]];
+        nextShotObj.gameObject.GetComponent<Animator>().runtimeAnimatorController = animators[bulletQueueArr[1]];
+        //nextShotObj = bulletQueueSpritesArr[bulletQueueArr[1]];   //Next shot object update
     }
 
 }
