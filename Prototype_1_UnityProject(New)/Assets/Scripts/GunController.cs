@@ -96,6 +96,8 @@ public class GunController : MonoBehaviour
     public void HitByEnemy() //If the enemy hits either the player hand or the player centre
     {
         playerHealth--;
+        //Play player sound
+        FindObjectOfType<SoundManager>().Play("Player Hurt"); //find name of sound
         if (playerHealth <= 0)
         {
             print("Game Over");

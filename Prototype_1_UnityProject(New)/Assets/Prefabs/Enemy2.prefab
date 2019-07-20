@@ -11,15 +11,16 @@ GameObject:
   - component: {fileID: 4126206846742942381}
   - component: {fileID: 8841587228139897278}
   - component: {fileID: 7917220336234370854}
-  - component: {fileID: 5028098130699150699}
   - component: {fileID: -1926344690962029504}
+  - component: {fileID: -8857152005965039002}
+  - component: {fileID: 316172056}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4126206846742942381
 Transform:
   m_ObjectHideFlags: 0
@@ -101,19 +102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5028098130699150699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4126206846742942369}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1926344690962029504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +115,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyID: 1
+  enemySpeed: 2.5
+--- !u!61 &-8857152005965039002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4126206846742942369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &316172056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4126206846742942369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd033c0a1d3ad842835d4a3e452367f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundClip: {fileID: 8300000, guid: 98aadc3b7b77e4e4faad34f46de423fa, type: 3}
+    name: Death Sound
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - soundClip: {fileID: 8300000, guid: 1cc11712d452a8545bcd54cfee6025c4, type: 3}
+    name: Paper Walk
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

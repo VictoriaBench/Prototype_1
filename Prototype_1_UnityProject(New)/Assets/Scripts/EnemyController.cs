@@ -48,7 +48,10 @@ public class EnemyController : MonoBehaviour
 
     public void HitByBullet()
     {
+        //Player hurt sound
+        FindObjectOfType<SoundManager>().Play("Death Sound"); //find name of sound
         Destroy(this.gameObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,6 +59,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject.Find("Gun").GetComponent<GunController>().HitByEnemy();
+            Destroy(this.gameObject);
         }
     }
 }
