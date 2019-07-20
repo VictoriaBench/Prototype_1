@@ -16,7 +16,7 @@ public class GunController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        distanceFromPlayer = 0.6f; //helps with positioning. Puts the gun a bit off-centre of player
+        distanceFromPlayer = 1.9f; //helps with positioning. Puts the gun a bit off-centre of player
 
         for (int i = 0; i < bulletQueueArr.Length; i++) { //Fill the bullet queue
             bulletQueueArr[i] = Random.Range(0, bulletObjArr.Length);
@@ -67,7 +67,7 @@ public class GunController : MonoBehaviour
 
     void ShootProjectile(Vector3 shootPoint) //Spawns the bullet, and sets its travel direction
     {
-        GameObject shotBullet = Instantiate(bulletObjArr[bulletQueueArr[0]], this.transform.position, Quaternion.identity);
+        GameObject shotBullet = Instantiate(bulletObjArr[bulletQueueArr[0]], this.transform.position, this.transform.rotation);
         LoadBulletToQueue(); 
         shotBullet.GetComponent<PlayerBulletController>().SetTravelDirection(shootPoint);
     }

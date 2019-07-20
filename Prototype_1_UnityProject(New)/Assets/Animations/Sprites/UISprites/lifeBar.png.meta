@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: bda9205b42291db4e8164e34d0a030d1
+guid: 589b55e7927919b4ab5764b1dcd13ef0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2141455772837075100
-    second: ScissorsBullet_0
-  - first:
-      213: 6605401877852763713
-    second: ScissorsBullet_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,66 +69,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: ScissorsBullet_0
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 51
-        width: 346
-        height: 619
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cc300a3fc4a628498ffad0d0a4ac973
-      internalID: 2141455772837075100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScissorsBullet_1
-      rect:
-        serializedVersion: 2
-        x: 715
-        y: 75
-        width: 345
-        height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42bce0cfc81f9b941bd0eaec2c3f8d05
-      internalID: 6605401877852763713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 25f7eeb5cc947a842b5949872a6c5a62
+    spriteID: bb010f1635820ae45b6abb3d0127bb77
     internalID: 0
     vertices: []
     indices: 

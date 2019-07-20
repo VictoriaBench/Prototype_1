@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    float rotateSpeed = 50;
+    float rotateSpeed = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //SimpleRotate();
     }
 
     void SimpleRotate()
