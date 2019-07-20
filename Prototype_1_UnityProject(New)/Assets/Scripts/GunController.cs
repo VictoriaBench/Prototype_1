@@ -10,6 +10,7 @@ public class GunController : MonoBehaviour
     public RuntimeAnimatorController[] animators;
 
     float distanceFromPlayer; //How far the gun should be from the centre object
+    public int playerHealth = 5;
 
     int [] bulletQueueArr = new int [2];
     public GameObject[] bulletQueueSpritesArr; //0 for rock, 1 for papper, 2 for scissors. Holds the Visual Sprites for next shot
@@ -90,6 +91,15 @@ public class GunController : MonoBehaviour
         this.gameObject.GetComponent<Animator>().runtimeAnimatorController = animators[bulletQueueArr[0]];
         nextShotObj.gameObject.GetComponent<Animator>().runtimeAnimatorController = animators[bulletQueueArr[1]];
         //nextShotObj = bulletQueueSpritesArr[bulletQueueArr[1]];   //Next shot object update
+    }
+
+    public void HitByEnemy() //If the enemy hits either the player hand or the player centre
+    {
+        playerHealth--;
+        if (playerHealth <= 0)
+        {
+            print("Game Over");
+        }
     }
 
 }

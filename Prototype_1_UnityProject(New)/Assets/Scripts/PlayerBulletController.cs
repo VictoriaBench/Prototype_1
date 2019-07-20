@@ -31,4 +31,12 @@ public class PlayerBulletController : MonoBehaviour
         travelDirection = newTravelDir;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyController>().HitByBullet();
+        }
+    }
+
 }

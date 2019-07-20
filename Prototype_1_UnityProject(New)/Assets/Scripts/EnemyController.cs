@@ -18,8 +18,10 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        SetRotation();
         spawnPoint = this.transform.position;
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        playerPos = Vector3.zero;
 
         lerpTime = (spawnPoint - playerPos).magnitude / enemySpeed; //How long it should take to reach the destination.
     }
@@ -34,5 +36,26 @@ public class EnemyController : MonoBehaviour
     { //uses a lerp. Can be changed to use a basic 'position += distance' method.
         currLerp += Time.deltaTime / lerpTime;
         this.transform.position = Vector3.Lerp(spawnPoint, playerPos, currLerp);
+    }
+
+    void SetRotation() //rotates the enemy in relation to the player
+    {
+        float newAngle = 0;
+        newAngle = Vector3.SignedAngle(Vector3.up, this.transform.position, Vector3.forward);
+
+        this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, newAngle); //sets enemy angle
+    }
+
+    public void HitByBullet()
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameObject.Find("Gun").GetComponent<GunController>().HitByEnemy();
+        }
     }
 }
