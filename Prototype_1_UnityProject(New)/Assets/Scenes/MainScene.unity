@@ -1578,6 +1578,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2627451
+      objectReference: {fileID: 0}
     - target: {fileID: 5235709374988553414, guid: 86a6b13b6e23dd54087f98d46509cd5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1632,21 +1647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.21568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.22352941
-      objectReference: {fileID: 0}
-    - target: {fileID: 5235709374988553273, guid: 86a6b13b6e23dd54087f98d46509cd5e,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.2627451
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a6b13b6e23dd54087f98d46509cd5e, type: 3}
