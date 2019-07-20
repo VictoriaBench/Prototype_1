@@ -8,7 +8,7 @@ public class EnemySpawnerController : MonoBehaviour
 
     float spawnRate = 3;    //Spawn rate of enemies (can be changed in runtime)
     //float spawnEnemySpeed = 5;  //How fast the enemies move (can be changed in runtime)
-    float spawnDistance = 10;    //How far away the enemies spawn from the player
+    float spawnDistance = 14;    //How far away the enemies spawn from the player
 
     // Start is called before the first frame update
     void Start()
