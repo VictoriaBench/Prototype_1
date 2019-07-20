@@ -4,91 +4,35 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    ////////// PUBLIC FIELDS //////////
-    public int enemyHealth = 3;
-    public GameObject gibEffect;
-    public float attackDelay = 1;
-    public float attackDistance = 5;
-	public Transform particleSpawner;
+    public int enemyID; //0 for rock, 1 for paper, 2 for scissors.
 
-    ////////// PRIVATE FIELDS //////////
-    GameObject player;
-    PlayerController playerController;
-    float aiDelay = 0.2f;
-    bool aiUpdate = true;
-    float attackStep = 0.0f;
-    LevelManager lvlMan;
-    UnityEngine.AI.NavMeshAgent agent;
-    
+    Vector3 spawnPoint; //The point where this enemy spawns.
+    Vector3 playerPos; //The point where the player is.
+
+    public float enemySpeed = 2.5f; //How fast the enemy moves.
+
+    float lerpPos; //used to correctly lerp, no touchie.
+    float lerpTime;
+    float currLerp = 0;
+
 
     void Start()
     {
-        ////////// INITIALIZATIONS //////////
-        GameObject LM = GameObject.FindGameObjectWithTag("Level Manager");
-        lvlMan = LM.GetComponent<LevelManager>();
-        lvlMan.numberOfEnemies.Add(this.gameObject);
+        spawnPoint = this.transform.position;
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerController = player.GetComponent<PlayerController>();
-
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        lerpTime = (spawnPoint - playerPos).magnitude / enemySpeed; //How long it should take to reach the destination.
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (aiUpdate == true)
-        {
-            StartCoroutine(EnemyAIDelay());
-        }
-        if (enemyHealth <= 0)
-        {
-            EnemyDeath();
-        }
-
-		Animator spiderBotAnim = this.transform.GetChild (0).GetComponent<Animator> ();
-
-        if (agent.velocity.x < 0.001 && agent.velocity.z < 0.001 && Vector3.Distance(this.gameObject.transform.position, player.transform.position) < attackDistance)
-        {
-            if (Time.time > attackStep)
-            {
-                attackStep = Time.time + attackDelay;
-                StartCoroutine(EnemyAttack());
-				spiderBotAnim.SetBool ("Attack", true);
-            }
-        }
-        else if (agent.velocity.x > 0.001 && agent.velocity.z > 0.001 && Vector3.Distance(this.gameObject.transform.position, player.transform.position) > attackDistance)
-        {
-            StopCoroutine(EnemyAttack());
-			spiderBotAnim.SetBool ("Attack", false);
-        }
-	}
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "MyBullet(Clone)")
-        {
-            enemyHealth--;
-        }
+        TravelTowardsPlayer();
     }
 
-    void EnemyDeath()
-    {
-        Instantiate(gibEffect, particleSpawner.transform.position, particleSpawner.transform.rotation);
-        Destroy(gameObject);
-        lvlMan.numberOfEnemies.Remove(this.gameObject);
-    }
-
-    IEnumerator EnemyAIDelay()
-    {
-        aiUpdate = false;
-        yield return new WaitForSeconds(aiDelay);
-        agent.destination = player.transform.position;
-        aiUpdate = true;
-    }
-
-    IEnumerator EnemyAttack()
-    {
-        yield return new WaitForSeconds(attackDelay);
-        playerController.playerHealth--;
+    void TravelTowardsPlayer() //Moves the enemy towards the player
+    { //uses a lerp. Can be changed to use a basic 'position += distance' method.
+        currLerp += Time.deltaTime / lerpTime;
+        this.transform.position = Vector3.Lerp(spawnPoint, playerPos, currLerp);
     }
 }

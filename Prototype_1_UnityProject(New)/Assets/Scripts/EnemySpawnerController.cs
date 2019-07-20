@@ -36,8 +36,8 @@ public class EnemySpawnerController : MonoBehaviour
         Vector3 newSpawnPos = new Vector3 (Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0); //Get a random direction to spawn enemy from
         newSpawnPos = newSpawnPos.normalized * spawnDistance;
 
-        Instantiate(enemyObjArr[Random.Range(0, enemyObjArr.Length)], newSpawnPos, Quaternion.identity);
-        
+        GameObject enemy = Instantiate(enemyObjArr[Random.Range(0, enemyObjArr.Length)], newSpawnPos, Quaternion.identity);
+        enemy.SetActive(true);
     }
 
 
